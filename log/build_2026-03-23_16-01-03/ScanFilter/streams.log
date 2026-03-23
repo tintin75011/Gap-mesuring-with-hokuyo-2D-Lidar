@@ -1,0 +1,22 @@
+[0.604s] Invoking command in '/home/user/lidar_gap_ws/src/ScanFilter': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/user/lidar_gap_ws/build/ScanFilter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/lidar_gap_ws/install/ScanFilter/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ScanFilter build --build-base /home/user/lidar_gap_ws/build/ScanFilter/build install --record /home/user/lidar_gap_ws/build/ScanFilter/install.log --single-version-externally-managed install_data
+[0.805s] running egg_info
+[0.820s] writing ../../build/ScanFilter/ScanFilter.egg-info/PKG-INFO
+[0.820s] writing dependency_links to ../../build/ScanFilter/ScanFilter.egg-info/dependency_links.txt
+[0.820s] writing entry points to ../../build/ScanFilter/ScanFilter.egg-info/entry_points.txt
+[0.820s] writing requirements to ../../build/ScanFilter/ScanFilter.egg-info/requires.txt
+[0.820s] writing top-level names to ../../build/ScanFilter/ScanFilter.egg-info/top_level.txt
+[0.850s] reading manifest file '../../build/ScanFilter/ScanFilter.egg-info/SOURCES.txt'
+[0.850s] writing manifest file '../../build/ScanFilter/ScanFilter.egg-info/SOURCES.txt'
+[0.851s] running build
+[0.851s] running build_py
+[0.851s] running install
+[0.855s] running install_lib
+[0.870s] running install_data
+[0.870s] running install_egg_info
+[0.886s] removing '/home/user/lidar_gap_ws/install/ScanFilter/lib/python3.12/site-packages/ScanFilter-0.0.0-py3.12.egg-info' (and everything under it)
+[0.886s] Copying ../../build/ScanFilter/ScanFilter.egg-info to /home/user/lidar_gap_ws/install/ScanFilter/lib/python3.12/site-packages/ScanFilter-0.0.0-py3.12.egg-info
+[0.887s] running install_scripts
+[0.990s] Installing scan_analysis_node script to /home/user/lidar_gap_ws/install/ScanFilter/lib/ScanFilter
+[0.990s] Installing scan_filter_node script to /home/user/lidar_gap_ws/install/ScanFilter/lib/ScanFilter
+[0.990s] writing list of installed files to '/home/user/lidar_gap_ws/build/ScanFilter/install.log'
+[1.007s] Invoked command in '/home/user/lidar_gap_ws/src/ScanFilter' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/user/lidar_gap_ws/build/ScanFilter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/user/lidar_gap_ws/install/ScanFilter/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/ScanFilter build --build-base /home/user/lidar_gap_ws/build/ScanFilter/build install --record /home/user/lidar_gap_ws/build/ScanFilter/install.log --single-version-externally-managed install_data

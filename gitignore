@@ -1,0 +1,37 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Environnement virtuel Python
+myenv/
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+*.egg
+
+# Bag files (peuvent être très lourds)
+*.db3
+*.mcap
+*.bag
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# RViz session temporaire (garder uniquement le .rviz sauvegardé volontairement)
+*.rviz~

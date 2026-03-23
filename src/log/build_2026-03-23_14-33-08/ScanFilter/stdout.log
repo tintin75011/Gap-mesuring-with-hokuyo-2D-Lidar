@@ -1,0 +1,39 @@
+running egg_info
+creating ../build/ScanFilter/ScanFilter.egg-info
+writing ../build/ScanFilter/ScanFilter.egg-info/PKG-INFO
+writing dependency_links to ../build/ScanFilter/ScanFilter.egg-info/dependency_links.txt
+writing entry points to ../build/ScanFilter/ScanFilter.egg-info/entry_points.txt
+writing requirements to ../build/ScanFilter/ScanFilter.egg-info/requires.txt
+writing top-level names to ../build/ScanFilter/ScanFilter.egg-info/top_level.txt
+writing manifest file '../build/ScanFilter/ScanFilter.egg-info/SOURCES.txt'
+reading manifest file '../build/ScanFilter/ScanFilter.egg-info/SOURCES.txt'
+writing manifest file '../build/ScanFilter/ScanFilter.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/user/lidar_gap_ws/src/build/ScanFilter/build
+creating /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib
+creating /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter
+copying ScanFilter/scan_filter_node.py -> /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter
+copying ScanFilter/__init__.py -> /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter
+copying ScanFilter/scan_analysis_node.py -> /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter
+running install
+running install_lib
+creating /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter
+copying /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter/scan_filter_node.py -> /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter
+copying /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter/__init__.py -> /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter
+copying /home/user/lidar_gap_ws/src/build/ScanFilter/build/lib/ScanFilter/scan_analysis_node.py -> /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter
+byte-compiling /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter/scan_filter_node.py to scan_filter_node.cpython-312.pyc
+byte-compiling /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter/__init__.py to __init__.cpython-312.pyc
+byte-compiling /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter/scan_analysis_node.py to scan_analysis_node.cpython-312.pyc
+running install_data
+creating /home/user/lidar_gap_ws/src/install/ScanFilter/share/ament_index
+creating /home/user/lidar_gap_ws/src/install/ScanFilter/share/ament_index/resource_index
+creating /home/user/lidar_gap_ws/src/install/ScanFilter/share/ament_index/resource_index/packages
+copying resource/ScanFilter -> /home/user/lidar_gap_ws/src/install/ScanFilter/share/ament_index/resource_index/packages
+copying package.xml -> /home/user/lidar_gap_ws/src/install/ScanFilter/share/ScanFilter
+running install_egg_info
+Copying ../build/ScanFilter/ScanFilter.egg-info to /home/user/lidar_gap_ws/src/install/ScanFilter/lib/python3.12/site-packages/ScanFilter-0.0.0-py3.12.egg-info
+running install_scripts
+Installing scan_analysis_node script to /home/user/lidar_gap_ws/src/install/ScanFilter/lib/ScanFilter
+Installing scan_filter_node script to /home/user/lidar_gap_ws/src/install/ScanFilter/lib/ScanFilter
+writing list of installed files to '/home/user/lidar_gap_ws/src/build/ScanFilter/install.log'

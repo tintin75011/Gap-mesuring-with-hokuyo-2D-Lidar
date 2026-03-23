@@ -1,0 +1,6 @@
+source;share/ScanFilter/hook/pythonpath.ps1
+source;share/ScanFilter/hook/pythonpath.dsv
+source;share/ScanFilter/hook/pythonpath.sh
+source;share/ScanFilter/hook/ament_prefix_path.ps1
+source;share/ScanFilter/hook/ament_prefix_path.dsv
+source;share/ScanFilter/hook/ament_prefix_path.sh
