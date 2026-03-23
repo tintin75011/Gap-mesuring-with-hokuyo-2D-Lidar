@@ -3,7 +3,7 @@
 Pipeline ROS2 pour l'analyse d'un scan laser 2D (Hokuyo URG). Permet de filtrer une zone d'intérêt, de détecter des groupes de points par clustering et de mesurer la distance minimale entre ces groupes en temps réel dans RViz2.
 
 ---
-
+![Capture d'écran de l'application](images/screen.png)
 ## Architecture
 
 ```
@@ -19,8 +19,7 @@ Pipeline ROS2 pour l'analyse d'un scan laser 2D (Hokuyo URG). Permet de filtrer 
 | Package | Rôle |
 |---|---|
 | `urg_node2` | Driver du lidar Hokuyo URG — publie `/scan` |
-| `ScanFilter` | Filtrage par ROI cartésienne — publie `/filteredScan` + marker de la zone |
-| `scanGapAnalysis` | Clustering DBSCAN sur buffer temporel — publie groupes colorés + distance minimale |
+| `ScanFilter` | Filtrage par ROI cartésienne — publie `/filteredScan` + marker de la zone + Clustering DBSCAN sur buffer temporel — publie groupes colorés + distance minimale |
 
 ---
 
@@ -53,6 +52,11 @@ source install/setup.bash
 
 ### Tout en une commande
 
+#### Dans un terminal 
+```bash
+ros2 launch urg_node2 urg_node2.launch.py
+```
+#### Dans un second terminal 
 ```bash
 ros2 launch ScanFilter lidar_pipeline.launch.py
 ```
