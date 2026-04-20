@@ -40,7 +40,7 @@ class ScanAnalysisNode(Node):
     def __init__(self):
         super().__init__('scan_analysis_node')
 
-        self.declare_parameter('decay_time',  5.0)
+        self.declare_parameter('decay_time',  10.0)
         self.declare_parameter('eps',         0.006)
         self.declare_parameter('min_samples', 50)
         self.declare_parameter('voxel_size',  0.02)
@@ -121,23 +121,32 @@ class ScanAnalysisNode(Node):
     # ------------------------------------------------------------------
     # Distance minimale entre deux groupes
     # ------------------------------------------------------------------
-    def min_distance_between(self, cluster_a, cluster_b):
-        """Retourne (d_min, point_a, point_b) entre deux clusters."""
-        d_min = float('inf')
-        best_a = best_b = None
-
+    def min_distance_between(self, cluster_a, cluster_b, k=5):
+        """
+        Retourne la moyenne des k plus petites distances entre deux clusters,
+        ainsi que les points correspondants.
+        """
         arr_a = np.array(cluster_a)
         arr_b = np.array(cluster_b)
 
+        # Calculer toutes les distances entre chaque paire de points
+        distances = []
         for i, pa in enumerate(arr_a):
             dists = np.sqrt(np.sum((arr_b - pa) ** 2, axis=1))
-            j = np.argmin(dists)
-            if dists[j] < d_min:
-                d_min = dists[j]
-                best_a = tuple(arr_a[i])
-                best_b = tuple(arr_b[j])
+            for j, d in enumerate(dists):
+                distances.append((d, tuple(pa), tuple(arr_b[j])))
 
-        return float(d_min), best_a, best_b
+        # Trier les distances par ordre croissant
+        distances.sort(key=lambda x: x[0])
+
+        # Prendre les k plus petites distances
+        top_k = distances[:k]
+
+        # Calculer la moyenne des k distances
+        avg_distance = sum(d for d, _, _ in top_k) / k
+
+        # Retourner la moyenne et les points associés à la première distance (pour la visualisation)
+        return avg_distance, top_k[0][1], top_k[0][2]
 
     # ------------------------------------------------------------------
     # Markers : points colorés par groupe + label
@@ -257,7 +266,7 @@ class ScanAnalysisNode(Node):
         text.color.g = 1.0
         text.color.b = 1.0
         text.color.a = 1.0
-        text.text = f'{d_min:.3f}-m-(G0-G1)'
+        text.text = f'{d_min:.4f}-m-(G0-G1)'
 
         marker_array.markers.append(text)
 

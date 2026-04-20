@@ -14,10 +14,10 @@ class ScanFilterNode(Node):
     Publie également un Marker visuel de la ROI sur /roi_marker.
 
     Paramètres dynamiques (modifiables avec ros2 param set) :
-        x_min (float) : borne X minimale en mètres  (défaut : -10.0)
-        x_max (float) : borne X maximale en mètres  (défaut :  10.0)
-        y_min (float) : borne Y minimale en mètres  (défaut : -10.0)
-        y_max (float) : borne Y maximale en mètres  (défaut :  10.0)
+        x_min (float) : borne X minimale en mètres  (défaut : -00.0)
+        x_max (float) : borne X maximale en mètres  (défaut :  30.0)
+        y_min (float) : borne Y minimale en mètres  (défaut : -0.20)
+        y_max (float) : borne Y maximale en mètres  (défaut :  0.10)
     """
 
     def __init__(self):

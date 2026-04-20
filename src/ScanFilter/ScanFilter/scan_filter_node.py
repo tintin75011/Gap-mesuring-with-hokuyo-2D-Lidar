@@ -25,9 +25,9 @@ class ScanFilterNode(Node):
 
         # --- Déclaration des paramètres de la ROI ---
         self.declare_parameter('x_min', -0.0)
-        self.declare_parameter('x_max',  0.30)
-        self.declare_parameter('y_min', -0.10)
-        self.declare_parameter('y_max',  0.1)
+        self.declare_parameter('x_max',  0.50)
+        self.declare_parameter('y_min', -0.050)
+        self.declare_parameter('y_max',  0.05)
 
         # --- Subscriber / Publishers ---
         self.sub = self.create_subscription(
