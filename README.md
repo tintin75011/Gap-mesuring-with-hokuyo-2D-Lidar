@@ -1,5 +1,5 @@
 # ScanFilter Package
-
+![Exemple d'image](images/screen.png)
 ## Overview
 This ROS2 package provides filtering and clustering analysis tools for 2D LiDAR scan data. It consists of two main nodes:
 
