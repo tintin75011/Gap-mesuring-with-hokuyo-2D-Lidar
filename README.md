@@ -76,11 +76,12 @@ This ROS2 package provides filtering and clustering analysis tools for 2D LiDAR 
   Size of point markers in RViz (in meters)
 
 ## How to Build
+## For the lidar data analysis
 
 1. **Create ROS2 workspace and obtain source code**
 ```bash
-   cd <ROS2_workspace>/src
-   git clone <your_repository_url> ScanFilter
+   cd <ROS2_workspace>
+   git clone https://github.com/tintin75011/Gap-mesuring-with-hokuyo-2D-Lidar.git
 ```
 
 2. **Install dependencies**
@@ -101,6 +102,41 @@ This ROS2 package provides filtering and clustering analysis tools for 2D LiDAR 
 ```bash
    source install/setup.bash
 ```
+### For the lidar data retrieving
+1. **Obtaining Source Code**
+```bash
+  cd <ROS2_workspace>/src
+  git clone --recursive https://github.com/Hokuyo-aut/urg_node2.git
+```
+2. **Installing Related Packages**
+```bash
+  rosdep update
+  rosdep install -i --from-paths urg_node2
+```
+3. **Build**
+```bash
+  cd <ROS2_workspace>
+  colcon build --symlink-install
+```
+### Test the lidar 
+1. **Connect LiDAR**
+  Connect via Ethernet or USB.
+2. **Set the connection destination (parameters)**
+Edit config/params_ether.yaml (for Ethernet connections)
+※If you use USB connection, edit config/params_serial.yaml' and change the parameter file specification part of launch/urg_node2.launch.py` to params_serial.yaml.
+
+3. Node startup
+
+```bash
+  # Terminal 1: Start Hokuyo LiDAR driver
+  ros2 launch urg_node2 urg_node2.launch.py
+
+  # Terminal 2 : Start the transformation
+  ros2 run tf2_ros static_transform_publisher --frame-id world --child-frame-id laser
+
+  # Terminal 3 : Start rviz to visualize the data streaming
+  ros2 run rviz2 rviz2
+```
 
 ## Usage Examples
 
@@ -109,7 +145,7 @@ This ROS2 package provides filtering and clustering analysis tools for 2D LiDAR 
 The easiest way to start the complete pipeline is using the launch file:
 
 ```bash
-ros2 launch ScanFilter scan_analysis.launch.py
+ros2 launch ScanFilter lidar_pipeline.launch.py
 ```
 
 This will start:
@@ -122,21 +158,21 @@ This will start:
 
 ```bash
 # Modify ROI bounds
-ros2 launch ScanFilter scan_analysis.launch.py \
+ros2 launch ScanFilter lidar_pipeline.launch.py \
     x_min:=0.1 \
     x_max:=0.4 \
     y_min:=-0.1 \
     y_max:=0.1
 
 # Modify accumulation time and clustering parameters
-ros2 launch ScanFilter scan_analysis.launch.py \
+ros2 launch ScanFilter lidar_pipeline.launch.py \
     accumulation_time:=5.0 \
     eps:=0.008 \
     min_samples:=100 \
     marker_size:=0.002
 
 # Combine multiple parameters
-ros2 launch ScanFilter scan_analysis.launch.py \
+ros2 launch ScanFilter lidar_pipeline.launch.py \
     x_max:=0.5 \
     accumulation_time:=15.0 \
     eps:=0.01
@@ -155,6 +191,10 @@ ros2 run ScanFilter scan_analysis_node
 
 # Terminal 3: RViz
 ros2 run rviz2 rviz2
+
+# Terminal 4: Transform
+ros2 run tf2_ros static_transform_publisher --frame-id world --child-frame-id laser
+
 ```
 
 ### Runtime Parameter Changes
