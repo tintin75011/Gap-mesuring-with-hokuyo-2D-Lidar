@@ -281,7 +281,7 @@ This package is designed to work with the Hokuyo urg_node2 driver. Complete setu
 ros2 launch urg_node2 urg_node2.launch.py
 
 # Terminal 2: Start filtering and analysis
-ros2 launch ScanFilter scan_analysis.launch.py
+ros2 launch ScanFilter lidar_pipeline.launch.py
 ```
 
 Make sure your Hokuyo LiDAR is publishing to `/scan` topic.
